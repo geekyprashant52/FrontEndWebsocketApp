@@ -1,0 +1,175 @@
+
+.adminPageWrapper
+{
+    background: linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(0,31,83,1) 40%, rgba(0,214,155,1) 95%);
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+.quizNameWrapper
+{
+    margin-bottom: 2rem;
+}
+
+.leaderBoardWrapper
+{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    height: 450px;
+}
+
+.leaderBoardListWrapper
+{
+    overflow-y: scroll;
+    max-height: 380px;
+}
+.scoreCard
+{
+    background-color: #001f53;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Loading sec starts*/
+
+.loadingSecWrapper
+{
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.loadingSecWrapper p
+{
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.customProgressBarOuter
+{
+    /* background-color: #1c1c39; */
+    /* background: #1c1c39; */
+    background-color: #03615b;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2px;
+    /* transition: all 10ms; */
+}
+
+.customProgressBarInner
+{
+    background-color: white;
+    height: 8px;
+    transition: all 10ms;
+    /* background: white; */
+    /* color: white; */
+}
+
+/*Loading sec ends*/
+
+.questionSecWrapper
+{
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    border-radius: 5px;
+    height: 450px;
+}
+.questionHeadingWrapper
+{
+    display: flex;
+    justify-content: center;
+}
+.questionHeadingWrapper h1
+{
+    font-size: 1.4rem;
+    font-weight:600;
+}
+
+.loadingWrapper
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.questionsWrapper
+{
+    margin-top: 20px;
+}
+
+.questionsWrapper h2
+{
+    font-size: 1.2rem;
+    font-weight:600;
+}
+
+.optionsWrapper
+{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.optionsWrapper div
+{
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.qrCodeWrapper
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qrCodeImageWrapper
+{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qrCodeImageWrapper h2
+{
+    font-size: 1.4rem; 
+    color: white; 
+    margin-bottom: 1rem;
+    font-weight:600;
+}
+
+.qrCodeImageWrapper img
+{
+    width: 100%;
+}
+
+.quizButton
+{
+    background-color: white;
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.quizButtonDisable
+{
+    background-color: white;
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: not-allowed;
+}

@@ -1,0 +1,94 @@
+<template>
+    <div class="clientPageWrapper">
+        <template if:true={isShowClientForm}>
+            <div class="errorTextWrapper">{newUserErrorText}</div>
+            <c-client-page-form onsubmit = {handleClientSubmitBtn}></c-client-page-form>
+        </template>
+        <template if:false={isShowClientForm}>
+            <lightning-layout horizontal-align="center" multiple-rows>
+                <lightning-layout-item size="12">
+                    <div class="testNameWrapper">
+                        <template if:true={personObj}>
+                            <p style="font-size: 0.7rem;">Server timing: {serverTime}</p>
+                            <h2 style="font-size: 1.2rem;">Welcome {personObj.name}</h2>
+                        </template>
+                        
+                        <h1>{testName}</h1>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                  <template if:true={isShowWaitingtextSec}>
+                    <div class="waitingTextWrapper">
+                        <h3>Players waiting: {getWaitingCount}</h3>
+                        <h2>Waiting for the host to start</h2>
+                        <div class="spinnerHolder">
+                            <lightning-spinner variant="brand" alternative-text="Loading" size="medium"></lightning-spinner>
+                        </div>
+
+                        <div class="rulesWrapper">
+                            <h2>Rules for the quiz</h2>
+                            <template if:true={rulesArr} for:each={rulesArr} for:item="rule">
+                                <p key={rule}>-{rule}</p>
+                            </template>
+                        </div>
+
+                        <!-- <div class="readyBtnWrapper">
+                            <button>I am ready.</button>
+                        </div> -->
+                    </div>
+                  </template>
+                  <template if:false={isShowWaitingtextSec}>
+                    <div class="questionsSecWrapper">
+                        <div class="loadingSecWrapper">
+                            <div class="customProgressBarOuter slds-progress-bar slds-progress-bar_circular" aria-valuemin="0" aria-valuemax="100" 
+                                aria-valuenow={getCompletedPercentage} role="progressbar">
+                                <span class="slds-progress-bar__value customProgressBarInner" style = {getProgressBarWidth}>
+                                    <span class="slds-assistive-text"></span>
+                                </span>
+                            </div>
+                            <p>Time remaining: {questionTimeText} Sec.</p>
+                            <h3>Click any option to submit.</h3>
+                        </div>
+
+                        
+                        <div class="questionWrapper">
+                            <template if:true={currentQuestionObj}>
+                                <h2>Q. {currentQuestionObj.Question__c}</h2>
+                                <div class="optionsWrapper">
+                                    <template if:true={currentOptionsArr} for:each={currentOptionsArr} for:item="op">
+                                        <div class="optionsDiv" key={op} onclick={handleOptionClick}>{op}</div>
+                                    </template>
+                                    <!-- <lightning-layout horizontal-align="center" multiple-rows>
+                                        <template if:true={currentOptionsArr} for:each={currentOptionsArr} for:item="op">
+                                            <lightning-layout-item key={op} class="slds-m-bottom_small" padding="around-x_small" size="12">
+                                                <button onclick={handleOptionClick}>{op}</button>
+                                            </lightning-layout-item>
+                                        </template> -->
+                                        <!-- <lightning-layout-item class="slds-m-bottom_small" padding="around-x_small" size="12">
+                                            <button onclick={handleOptionClick}>A. {currentQuestionObj.Option_A__c}</button>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item class="slds-m-bottom_small" padding="around-x_small" size="12">
+                                            <button onclick={handleOptionClick}>B. {currentQuestionObj.Option_B__c}</button>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item class="slds-m-bottom_small" padding="around-x_small" size="12">
+                                            <button onclick={handleOptionClick}>C. {currentQuestionObj.Option_C__c}</button>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item class="slds-m-bottom_small" padding="around-x_small" size="12">
+                                            <button onclick={handleOptionClick}>D. {currentQuestionObj.Option_D__c}</button>
+                                        </lightning-layout-item> -->
+                                    <!-- </lightning-layout> -->
+                                </div>
+                            </template>
+                            
+                        </div>
+                    </div>
+                    <!-- <div class="submitBtnWrapper">
+                        <button>Submit</button>
+                    </div> -->
+                  </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+        
+    </div>
+</template>

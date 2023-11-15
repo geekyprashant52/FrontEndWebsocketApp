@@ -1,0 +1,279 @@
+
+
+::-webkit-scrollbar {
+    width: 0px;
+    /* border-radius: 1px; */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: black;
+}
+
+.clientPageWrapper
+{
+    background: linear-gradient(13deg, rgba(2,0,36,1) 0%, rgba(0,31,83,1) 40%, rgba(0,214,155,1) 95%);
+    padding: 1.5rem;
+    border-radius: 5px;
+    /* height: 95vh; */
+    overflow-y: scroll;
+    padding-bottom: 2rem;
+}
+
+.testNameWrapper
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testNameWrapper h1
+{
+    font-size: 1.8rem;
+    display: block;
+}
+
+.errorTextWrapper
+{
+    color: red; 
+    font-style:italic; 
+    font-size:1rem; 
+    margin-bottom: 10px
+}
+
+/* .slds-progress-bar__value
+{
+    background-color: #fafafa;
+} */
+
+
+
+.waitingTextWrapper
+{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.waitingTextWrapper h2
+{
+    font-size: 1.5rem;
+}
+
+.spinnerHolder{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin-top: 1rem;
+}
+
+.rulesWrapper
+{
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.rulesWrapper p
+{
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.readyBtnWrapper
+{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.readyBtnWrapper button
+{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: white;
+    color: #001f53;
+    border: none;
+    border-radius: 5px;
+}
+
+.questionsSecWrapper
+{
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 40px;
+    padding: 10px;
+}
+
+
+/* Loading section starts*/
+
+.loadingSecWrapper
+{
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.loadingSecWrapper p
+{
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.loadingSecWrapper h3
+{
+    font-size: 1rem;
+    margin-top: 10px;
+}
+.customProgressBarOuter
+{
+    /* background-color: #1c1c39; */
+    /* background: #1c1c39; */
+    background-color: #03615b;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2px;
+    /* transition: all 10ms; */
+}
+
+.customProgressBarInner
+{
+    background-color: white;
+    height: 8px;
+    transition: all 10ms;
+    /* background: white; */
+    /* color: white; */
+}
+
+
+/*Loading section ends*/
+
+
+
+.questionWrapper h2
+{
+    font-size: 1.2rem;
+    color: black;
+}
+
+.optionsWrapper
+{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.optionsDiv
+{
+    width: 80%;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #001f53;
+    border-radius: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.optionsWrapperDivClicked
+{
+    background-color: #00b200;
+    box-shadow: 2px 2px 5px black;
+}
+
+.optionsWrapperDivNotavail
+{
+    cursor: not-allowed;
+}
+
+.optionsWrapper button
+{
+    background-color: #001f53;
+    border-radius: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+}
+
+.submitBtnWrapper
+{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.submitBtnWrapper button
+{
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+
+
+@media only screen and (max-width: 480px){
+    .clientPageWrapper
+    {
+        padding: 10px;
+        padding-bottom: 2rem;
+    }
+
+    .testNameWrapper h1
+    {
+        font-size: 1.5rem;
+    }
+    .loadingSecWrapper
+    {
+        margin-top: 10px;
+    }
+
+    .questionsSecWrapper
+    {
+        margin-top: 20px;
+    }
+    .questionWrapper h2
+    {
+        font-size: 1rem;
+        color: black;
+    }
+    .optionsWrapper
+    {
+        margin-left: 0px;
+    }
+
+    .loadingSecWrapper p
+    {
+        font-size: 0.8rem;
+    }
+
+    .waitingTextWrapper h2
+    {
+        font-size: 1rem;
+    }
+
+}

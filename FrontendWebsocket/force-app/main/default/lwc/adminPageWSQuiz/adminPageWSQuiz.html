@@ -1,0 +1,107 @@
+<template>
+    <div class="adminPageWrapper">
+        <lightning-layout multiple-rows horizontal-align="space">
+            <lightning-layout-item size = "12" class="quizNameWrapper">
+                <lightning-layout multiple-rows>
+                  <lightning-layout-item size="6">
+                    <template if:true={testsList}>
+                        <div>
+                            <lightning-combobox
+                                name="quiz"
+                                label=""
+                                value={comboBoxValue}
+                                placeholder="Select a quiz to start"
+                                options={optionsForTestsData}
+                                onchange={handleComboboxChange} >
+                            </lightning-combobox>
+                        </div>
+                    </template>
+                  </lightning-layout-item>
+                  <lightning-layout-item size="12">
+                    <div style="margin-top: 20px;">
+                        <h2 style="color: white; font-size:1.3rem; font-weight:500;">Server timing: {serverTime}</h2>
+                        <h1 style="color: white; font-size:2rem; font-weight:600;">{comboBoxValue}</h1>
+                        <template if:false={comboBoxValue}>
+                            <h1 style="color: white; font-size:2rem; font-weight:600;">Please select a quiz to start.</h1>
+                        </template>
+                    </div>
+                    
+                  </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size = "12">
+                <template if:true={comboBoxValue}>
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item  padding="around-small" size = "4">
+                            <div class="leaderBoardWrapper">
+                                <h2 style="font-size: 1.4rem; margin-bottom: 1rem; font-weight:600;">Current leaderboard</h2>
+                                <div class="leaderBoardListWrapper">
+                                    <template if:true={leaderBoardList} for:each={leaderBoardList} for:item="lead">
+                                        <div key={lead.name} class="scoreCard">
+                                            <div>{lead.name}</div>
+                                            <div>Score: {lead.score}</div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item  padding="around-small" size = "5">
+                            <template if:true={isShowCurrentQueSec}>
+                                <div class="questionSecWrapper">
+                                    <div class="questionHeadingWrapper">
+                                        <h1>Current Question</h1>
+                                    </div>
+                                    <div class="loadingSecWrapper">
+                                        <div class="customProgressBarOuter slds-progress-bar slds-progress-bar_circular" aria-valuemin="0" aria-valuemax="100" 
+                                            aria-valuenow={getCompletedPercentage} role="progressbar">
+                                            <span class="slds-progress-bar__value customProgressBarInner" style = {getProgressBarWidth}>
+                                                <span class="slds-assistive-text"></span>
+                                            </span>
+                                        </div>
+                                        <p>Time remaining: {questionTimeText} Sec.</p>
+                                    </div>
+                                    <template if:true={getCurrentQuestion}>
+                                        <div class="questionsWrapper">
+                                            <h2>Q.{questionNumber} {getCurrentQuestion.Question__c}</h2>
+                                            <div class="optionsWrapper">
+                                                <div>A. {getCurrentQuestion.Option_A__c}</div>
+                                                <div>B. {getCurrentQuestion.Option_B__c}</div>
+                                                <div>C. {getCurrentQuestion.Option_C__c}</div>
+                                                <div>D. {getCurrentQuestion.Option_D__c}</div>
+                                            </div>
+                                        </div> 
+                                    </template>
+                                     
+                                </div>
+                            </template>
+                            
+                        </lightning-layout-item>
+                        <lightning-layout-item  padding="around-small" size = "3">
+                            <lightning-layout multiple-rows>
+                               <lightning-layout-item size="12">
+                                    <div class="qrCodeWrapper">
+                                        <div class="qrCodeImageWrapper">
+                                            <h2>Scan here to participate</h2>
+                                            <img src={websocketQuizQRCodeImg} alt="QR code">
+                                            <div style="margin-top:70px">
+                                                <button class="slds-button quizButton" onclick={handleNextBtnClick}>{btnQuizText}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            
+                        </lightning-layout-item>
+                    </lightning-layout>
+
+                </template>
+                
+            </lightning-layout-item>
+            
+            
+        </lightning-layout>
+    </div>
+    
+    
+</template>

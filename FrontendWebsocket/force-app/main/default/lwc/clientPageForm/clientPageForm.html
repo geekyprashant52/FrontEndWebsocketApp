@@ -1,0 +1,30 @@
+<template>
+    
+    <div class="formWrapper slds-p-around_medium">
+        <div class="headingWrapper">
+            <h2 style="font-size: 2rem;">{welcomeText}</h2>
+        </div>
+        <template is:true={isShowErrorText}>
+            <h2 style="font-size: 1rem; font-style: italic; color:red;">Please enter a valid name.</h2>
+        </template>
+        
+        <lightning-input type="text" 
+            label="Enter your name" 
+            name="clientName"
+            value={clientName} 
+            onchange={handleInputChange}>
+        </lightning-input>
+        <lightning-input type="text" 
+            label="Enter passcode" 
+            name="clientPasscode"
+            value={clientPasscode} 
+            placeholder={clientPasscode}
+            onchange={handleInputChange}>
+        </lightning-input>
+        <div class="quizButtonWrapper">
+            <button class="slds-button quizButton" 
+            onclick={handleNextBtnClick}>{btnQuizText}</button>
+        </div>
+    </div>
+    
+</template>

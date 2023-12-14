@@ -1,5 +1,8 @@
 # Introducing a realtime Salesforce multiplayer quiz application
 
+## Architecture
+![Architecture WS Quiz (1)](https://github.com/geekyprashant52/FrontEndWebsocketApp/assets/61961514/b66c4b6e-a4c8-40e2-b966-05d40fa430bd)
+
 ## Admin page 1
 <img width="1461" alt="admin_quiz_page" src="https://github.com/geekyprashant52/FrontEndWebsocketApp/assets/61961514/f7a95478-e9f4-4633-b43b-e19af385f4f3">
 
@@ -15,4 +18,4 @@
 
 
 
-![Architecture WS Quiz (1)](https://github.com/geekyprashant52/FrontEndWebsocketApp/assets/61961514/b66c4b6e-a4c8-40e2-b966-05d40fa430bd)
+

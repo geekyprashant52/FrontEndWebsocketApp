@@ -10,6 +10,14 @@
 - Render platform
 
 
+## What is WebSocket?
+WebSocket is bidirectional, a full-duplex protocol that is used in the same scenario of client-server communication, unlike HTTP it starts from ws:// or wss://. It is a stateful protocol, which means the connection between client and server will keep alive until it is terminated by either party (client or server). After closing the connection by either of the client and server, the connection is terminated from both ends. 
+
+[How WebSocket is different from the HTTP?](https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/)
+
+
+
+
 ## Admin page 1
 <img width="1461" alt="admin_quiz_page" src="https://github.com/geekyprashant52/FrontEndWebsocketApp/assets/61961514/f7a95478-e9f4-4633-b43b-e19af385f4f3">
 
@@ -34,3 +42,5 @@
 
 
 
+### Sources of information
+GeeksforGeeks,
